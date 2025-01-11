@@ -1,4 +1,4 @@
-class NotionFacesURLBuilder {
+export class NotionFacesURLBuilder {
 	private readonly baseURL: string =
 		"https://faces.notion.com/_next/image?url=/layers";
 
@@ -45,9 +45,7 @@ class NotionFacesURLBuilder {
 		return this.q;
 	}
 
-	get url(): string {
-		return `${this.baseURL}/${this.assetType}/${this.assetId}.png?w=${this.width}&q=${this.q}`;
+	get getURL(): string {
+		return `${this.baseURL}/${this.assetType}/${this.assetId}.png&w=${this.width}&q=${this.q}`;
 	}
 }
-
-export default NotionFacesURLBuilder;
